@@ -35,8 +35,32 @@ public class Main {
         }
         System.out.println();
 
-        //Задача 3
-        System.out.println("Task 3");
-
+        //Задача 3.1
+        System.out.println("Task 3.1");
+        int budget = 2500;
+        int parkingDays = 0;
+        int costOfParking = 100;
+        while (budget >= 100) {
+            parkingDays ++;
+            if (parkingDays % 5 != 0) {
+                budget -= costOfParking;
+            }
+        }
+        if (budget < 100) {
+            System.out.println("Вам хватит на " + parkingDays + " день парковки.");
+        }
+        System.out.println();
+        //Задача 3.2
+        System.out.println("Task 3.2");
+        int daysOfParking = 0;
+        int priceOfParking = 100;
+        int parkingBudget = 3000;
+        for (; parkingBudget > 0; daysOfParking++) {
+            if ((daysOfParking + 1) % 5 == 0) {
+                continue;
+            }
+            parkingBudget = parkingBudget - priceOfParking;
+        }
+        System.out.println("Количество дней на парковке: " + daysOfParking);
     }
 }
